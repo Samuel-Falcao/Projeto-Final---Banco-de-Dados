@@ -1,32 +1,52 @@
-# Projeto Final – Banco de Dados Relacional
+# 🏥 Projeto Final - Banco de Dados da Clínica Médica
 
-Este repositório contém o projeto final da disciplina de Banco de Dados, desenvolvido por:
-## 👥 Integrantes
-- David 
-- Agatha
-- Ricardo
-- Samuel
-  
-## 📌 Etapas do Projeto
-1- Deve ser desenvolvido no GitHub;
-2- Deve conter o modelo lógico. Diagrama de Entidade Relacionamento;
-3- Deve conter o modelo físico em perfeita sintonia com o modelo lógico;
-4- Deve conter pelo menos 10 instruções de INSERT;
-5- Deve conter pelo menos 3 instruções de UPDATE;
-6- Deve conter pelo menos 3 instruções de DELETE;
-7- Deve conter pelo menos 3 procedures;
-8- Deve conter pelo menos 3 funções;
-9- Deve conter pelo menos 5 gatilhos;
-10- Deve conter pelo menos 10 views;
-11- Todas as consultas devem ser funcionais e relevantes para a regra de negócio;
-12- Deve conter a instrução JOIN de forma funcional;
-13- Deve conter a cláusula GRUP BY de forma funcional, juntamente de suas funções de agregação;
-14- Deve conter a cláusula HAVING de forma funcional;
-15- Deve conter a cláusula ORDER BY de forma funcional;
-16- Deve conter a  cláusula WHERE de forma funcional;
+Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de Sistemas no SENAI. O objetivo é criar a estrutura de banco de dados para um sistema de gerenciamento de uma clínica médica, utilizando o SGBD MariaDB.
 
+## 📁 Estrutura do Projeto
 
+- `tabelas.sql` – Criação das tabelas do banco de dados
+- `inserts.sql` – Inserts com dados de exemplo
+- `updates.sql` – Atualizações de registros
+- `delete.sql` – Exclusão de dados
+- `functions.sql` – Funções armazenadas
+- `procedures.sql` – Procedures armazenadas
+- `triggers.sql` – Gatilhos (triggers) para ações automáticas
 
+## ✅ Checklist de Requisitos
+### 📊 Modelagem
+- [x] Modelo Lógico (DER)
+- [x] Modelo Físico
 
+### 🗂️ Estrutura do Banco
+- [x] Tabelas criadas no script SQL
+- [ ] Relacionamentos definidos com `FOREIGN KEY`
 
+### 🧾 Comandos SQL
 
+- INSERTS realizados: **0 de 10**
+- UPDATES realizados: **0 de 3**
+- DELETES realizados: **0 de 3**
+
+### 🧠 Lógica Avançada
+
+- PROCEDURES criadas: **0 de 3**
+- FUNCTIONS criadas: **0 de 3**
+- TRIGGERS criadas: **0 de 5**
+- VIEWS criadas: **0 de 10**
+
+### 🔍 Consultas SQL
+
+- [ ] Consultas com `JOIN`
+- [ ] Filtros com `WHERE`
+- [ ] Agrupamentos com `GROUP BY`
+- [ ] Filtros em grupos com `HAVING`
+- [ ] Ordenações com `ORDER BY`
+
+## 👥 Integrantes do Grupo
+- **Samuel Falcão**
+- **Ricardo Victor**
+- **Ágata Giovanna**
+- **David Vinicius**
+
+## 🔗 GitHub
+Acesse o repositório aqui: Projeto Final - Banco de Dados (https://github.com/Samuel-Falcao/Projeto-Final---Banco-de-Dados)
