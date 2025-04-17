@@ -34,3 +34,14 @@ CREATE TABLE pacientes(
 
 ALTER TABLE usuarios
 ADD COLUMN idade INT NOT NULL;
+
+CREATE TABLE agendamentos(
+	id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
+	dt_agendada DATETIME NOT NULL,
+	sts VARCHAR(20) NOT NULL DEFAULT 'Agendado',
+	descricao TEXT,
+	id_pacientes INT,
+	id_medicos INT,
+	FOREIGN KEY (id_pacientes) REFERENCES pacientes (id_pacientes),
+	FOREIGN KEY (id_medicos) REFERENCES medicos (id_medicos)	
+);
