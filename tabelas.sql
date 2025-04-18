@@ -45,3 +45,31 @@ CREATE TABLE agendamentos(
 	FOREIGN KEY (id_pacientes) REFERENCES pacientes (id_pacientes),
 	FOREIGN KEY (id_medicos) REFERENCES medicos (id_medicos)	
 );
+
+CREATE TABLE prontuarios (
+	id_prontuario INT PRIMARY KEY AUTO_INCREMENT,
+	id_paciente INT NOT NULL,
+	id_medico INT NOT NULL,
+	id_agendamento INT,
+	dt_atendimento DATETIME NOT NULL,
+	queixa_principal TEXT,
+	historico_clinico TEXT,
+	exame_fisico TEXT,
+	diagnostico TEXT,
+	conduta TEXT,
+	observacoes TEXT,
+	
+	FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
+	FOREIGN KEY (id_medico) REFERENCES medicos(id_medico),
+	FOREIGN KEY (id_agendamento) REFERENCES agendamentos(id_agendamento)
+);
+
+CREATE TABLE receitas_medicas (
+	id_receita INT PRIMARY KEY AUTO_INCREMENT,
+	id_prontuario INT NOT NULL,
+	dt_receita DATETIME NOT NULL,
+	medicamentos TEXT NOT NULL,
+	bula TEXT,
+	
+	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario)
+);
