@@ -73,3 +73,35 @@ CREATE TABLE receitas_medicas (
 	
 	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario)
 );
+
+CREATE TABLE exames (
+	id_exame INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (50) NOT NULL, 
+	tp_exame ENUM('laboratorial', 'imagem', 'clínico') NOT NULL,
+	valor DECIMAL (10,2) NOT NULL,
+	instruções VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
+	descricao VARCHAR (100),
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+
+CREATE TABLE formas_de_pagamento(
+	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (30) NOT NULL,
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+
+CREATE TABLE convenios (
+	id_convenio INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (50) NOT NULL,
+	cod_ANS INT NOT NULL,
+	tipo VARCHAR (100),
+	cobertura VARCHAR (100) NOT NULL, 
+	telefone CHAR (14),
+   	email VARCHAR (50),
+	site VARCHAR (50),
+	dt_inicio DATE NOT NULL,
+	dt_fim DATE NOT NULL,
+	cobertura TEXT,
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+
