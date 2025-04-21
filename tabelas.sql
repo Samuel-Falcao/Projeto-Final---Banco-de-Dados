@@ -1,3 +1,7 @@
+CREATE DATABASE clinica_medica;
+
+USE clinica_medica;
+
 CREATE TABLE usuarios (
 	id_usuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome_completo VARCHAR(50) NOT NULL,
@@ -32,18 +36,15 @@ CREATE TABLE pacientes(
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
-ALTER TABLE usuarios
-ADD COLUMN idade INT NOT NULL;
-
 CREATE TABLE agendamentos(
 	id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
 	dt_agendada DATETIME NOT NULL,
 	sts VARCHAR(20) NOT NULL DEFAULT 'Agendado',
 	descricao TEXT,
-	id_pacientes INT,
-	id_medicos INT,
-	FOREIGN KEY (id_pacientes) REFERENCES pacientes (id_pacientes),
-	FOREIGN KEY (id_medicos) REFERENCES medicos (id_medicos)	
+	id_paciente INT,
+	id_medico INT,
+	FOREIGN KEY (id_paciente) REFERENCES pacientes (id_paciente),
+	FOREIGN KEY (id_medico) REFERENCES medicos (id_medico)	
 );
 
 CREATE TABLE prontuarios (
@@ -79,7 +80,7 @@ CREATE TABLE exames (
 	nome VARCHAR (50) NOT NULL, 
 	tp_exame ENUM('laboratorial', 'imagem', 'clínico') NOT NULL,
 	valor DECIMAL (10,2) NOT NULL,
-	instruções VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
+	instrucoes VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
 	descricao VARCHAR (100),
 	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
@@ -95,7 +96,6 @@ CREATE TABLE convenios (
 	nome VARCHAR (50) NOT NULL,
 	cod_ANS INT NOT NULL,
 	tipo VARCHAR (100),
-	cobertura VARCHAR (100) NOT NULL, 
 	telefone CHAR (14),
    	email VARCHAR (50),
 	site VARCHAR (50),

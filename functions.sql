@@ -1,0 +1,7 @@
+DELIMITER $$
+CREATE FUNCTION fn_calcula_idade(dt_nascimento DATE) 
+RETURNS INT
+BEGIN
+	RETURN TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE());
+END $$
+DELIMITER ;
