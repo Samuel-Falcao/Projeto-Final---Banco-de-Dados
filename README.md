@@ -30,8 +30,8 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 ### 🧠 Lógica Avançada
 
 - PROCEDURES criadas: **0 de 3**
-- FUNCTIONS criadas: **0 de 3**
-- TRIGGERS criadas: **0 de 5**
+- FUNCTIONS criadas: **1 de 3**
+- TRIGGERS criadas: **1 de 5**
 - VIEWS criadas: **0 de 10**
 
 ### 🔍 Consultas SQL
