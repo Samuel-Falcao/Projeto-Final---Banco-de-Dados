@@ -1,5 +1,4 @@
 CREATE DATABASE clinica_medica;
-
 USE clinica_medica;
 
 CREATE TABLE usuarios (
@@ -33,6 +32,20 @@ CREATE TABLE pacientes(
 	id_paciente INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
     plano_de_saude VARCHAR(100) NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+CREATE TABLE enderecos (
+    id_endereco INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT NOT NULL,  -- A coluna 'id_usuario' será a chave estrangeira
+    tipo_endereco ENUM('Residencial', 'Comercial', 'Correspondência') NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    numero VARCHAR(20),
+    complemento VARCHAR(100),
+    bairro VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    estado CHAR(2) NOT NULL,
+    cep CHAR(10) NOT NULL,  
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
