@@ -44,9 +44,15 @@ CREATE TABLE agendamentos(
 	descricao TEXT,
 	id_paciente INT,
 	id_medico INT,
+    id_exames INT,
+    id_formas_de_pagamento INT,
+    id_convenios INT,
 	FOREIGN KEY (id_paciente) REFERENCES pacientes (id_paciente),
-	FOREIGN KEY (id_medico) REFERENCES medicos (id_medico)	
-);
+	FOREIGN KEY (id_medico) REFERENCES medicos (id_medico),
+    FOREIGN KEY (id_exames) REFERENCES exames (exames),
+    FOREIGN KEY (id_formas_de_pagamento) REFERENCES formas_de_pagamento (id_formas_de_pagamento),
+    FOREIGN KEY (id_convenios) REFERENCES convenios (id_convenios)
+    );
 
 CREATE TABLE prontuarios (
 	id_prontuario INT PRIMARY KEY AUTO_INCREMENT,
