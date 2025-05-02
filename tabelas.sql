@@ -21,11 +21,12 @@ CREATE TABLE medicos (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
-CREATE TABLE funcionarios(
-	id_funcionario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE funcionarios (
+    id_funcionario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
     cargo VARCHAR(60) NOT NULL,
     setor VARCHAR(40) NOT NULL,
+    salario DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
