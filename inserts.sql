@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 --  INSERTS MÉDICOS
 INSERT INTO usuarios (nome_completo, data_nascimento, cpf, email, senha, telefone, tipo_usuario, sts_usuario)
 VALUES
@@ -86,7 +85,7 @@ VALUES
 ('Enzo Ribeiro Cardoso', '1986-11-01', '94892064661', 'EnzoRibeiroCardoso@dayrep.com', 'P@c123', '7570564378', 'Paciente', 'Ativo'),
 ('Miguel Carvalho Alves', '2007-03-20', '58035951602', 'MiguelCarvalhoAlves@jourrapide.com', 'P@c123', '3146338494', 'Paciente', 'Ativo'),
 ('Livia Pinto Rodrigues', '1978-12-03', '57732304292', 'LiviaPintoRodrigues@teleworm.us', 'P@c123', '5578227515', 'Paciente', 'Ativo');
-=======
+
 -- INSERTS MÉDICOS 
 INSERT INTO usuarios (id_usuario, nome_completo, data_nascimento, cpf, email, senha, telefone, tipo_usuario, sts_usuario)
 VALUES
@@ -351,9 +350,8 @@ VALUES
 (117, 'Auxiliar Administrativo', 'Administrativo', 1850.00),
 (118, 'Enfermeiro', 'Enfermagem', 3350.00),
 (119, 'Auxiliar de Limpeza', 'Serviços Gerais', 1400.00),
-(120, 'Técnico de Enfermagem', 'Enfermagem', 2250.00)
+(120, 'Técnico de Enfermagem', 'Enfermagem', 2250.00);
 
->>>>>>> 1e30a1b32b4f5e6b12087c8cb99e771dbbcdf0fd
 
 #Tabelas de exames
 -- EXAMES LABORATORIAIS
@@ -409,7 +407,7 @@ VALUES
 (null, 'Avaliação postural e de marcha', 'clínico', 90.00, 'Sem preparo específico', 'Exame físico para avaliar equilíbrio, postura e padrão de caminhada', 'inativo');
 
 #Tabela de formas de pagamento
-INSERT INTO Formas_de_pagamento
+INSERT INTO formas_de_pagamento
 VALUES
 (null, 'pix', 'ativo'),
 (null, 'dinheiro', 'ativo'),
