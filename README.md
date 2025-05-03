@@ -19,7 +19,11 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 
 ### 🗂️ Estrutura do Banco
 - [x] Tabelas criadas no script SQL
+<<<<<<< HEAD
 - [x] Relacionamentos definidos com `FOREIGN KEY`
+=======
+- [X] Relacionamentos definidos com `FOREIGN KEY`
+>>>>>>> 1e30a1b32b4f5e6b12087c8cb99e771dbbcdf0fd
 
 ### 🧾 Comandos SQL
 
