@@ -64,7 +64,7 @@ CREATE TABLE agendamentos(
 	FOREIGN KEY (id_medico) REFERENCES medicos (id_medico),
     FOREIGN KEY (id_pagamento) REFERENCES formas_de_pagamento (id_pagamento),
 	FOREIGN KEY (id_convenio) REFERENCES convenios (id_convenio),
-    FOREIGN KEY (id_exame) REFERENCES exame (id_exame)
+    FOREIGN KEY (id_exames) REFERENCES exames (id_exame)
 );
 
 CREATE TABLE prontuarios (
@@ -124,4 +124,3 @@ CREATE TABLE convenios (
 	cobertura TEXT,
 	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
-
