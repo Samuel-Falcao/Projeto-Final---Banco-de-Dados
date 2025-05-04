@@ -26,7 +26,7 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 
 ### 🧾 Comandos SQL
 
-- INSERTS realizados: **0 de 10**
+- INSERTS realizados: **10 de 10**
 - UPDATES realizados: **0 de 3**
 - DELETES realizados: **0 de 3**
 
