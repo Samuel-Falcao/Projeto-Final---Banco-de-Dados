@@ -8,6 +8,7 @@ CREATE TABLE usuarios (
     cpf CHAR(14) NOT NULL UNIQUE KEY,
     email VARCHAR(45) NOT NULL, 
     senha VARCHAR(45) NOT NULL,
+    telefone CHAR(15), # ADICIONAR TELEFONE 
     tipo_usuario ENUM('Médico', 'Paciente', 'Funcionário') NOT NULL,
     sts_usuario ENUM('Ativo','Inativo') DEFAULT 'Ativo'
 );
@@ -15,7 +16,7 @@ CREATE TABLE usuarios (
 CREATE TABLE medicos (
 	id_medico INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
-    crm VARCHAR(15) NOT NULL UNIQUE KEY,
+    crm VARCHAR(30) NOT NULL UNIQUE KEY, # ALTERAR NA TABELA 
     especialidade VARCHAR(60) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
@@ -38,8 +39,8 @@ CREATE TABLE pacientes(
 
 CREATE TABLE enderecos (
     id_endereco INT PRIMARY KEY AUTO_INCREMENT,
-    id_usuario INT NOT NULL,  -- A coluna 'id_usuario' será a chave estrangeira
-    tipo_endereco ENUM('Residencial', 'Comercial', 'Correspondência') NOT NULL,
+    id_usuario INT NOT NULL, 
+    tipo_endereco ENUM('Residencial', 'Comercial') NOT NULL,
     endereco VARCHAR(255) NOT NULL,
     numero VARCHAR(20),
     complemento VARCHAR(100),
@@ -48,6 +49,36 @@ CREATE TABLE enderecos (
     estado CHAR(2) NOT NULL,
     cep CHAR(10) NOT NULL,  
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+CREATE TABLE formas_de_pagamento(
+	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (30) NOT NULL,
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+
+CREATE TABLE exames (
+	id_exame INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (50) NOT NULL, 
+	tp_exame ENUM('laboratorial', 'imagem', 'clínico') NOT NULL,
+	valor DECIMAL (10,2) NOT NULL,
+	instrucoes VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
+	descricao VARCHAR (100),
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+
+CREATE TABLE convenios (
+	id_convenio INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (50) NOT NULL,
+	cod_ANS INT NOT NULL,
+	tipo VARCHAR (100),
+	telefone CHAR (14),
+   	email VARCHAR (50),
+	site VARCHAR (50),
+	dt_inicio DATE NOT NULL,
+	dt_fim DATE NOT NULL,
+	cobertura TEXT,
+	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
 
 CREATE TABLE agendamentos(
@@ -93,34 +124,4 @@ CREATE TABLE receitas_medicas (
 	bula TEXT,
 	
 	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario)
-);
-
-CREATE TABLE exames (
-	id_exame INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR (50) NOT NULL, 
-	tp_exame ENUM('laboratorial', 'imagem', 'clínico') NOT NULL,
-	valor DECIMAL (10,2) NOT NULL,
-	instrucoes VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
-	descricao VARCHAR (100),
-	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
-);
-
-CREATE TABLE formas_de_pagamento(
-	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR (30) NOT NULL,
-	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
-);
-
-CREATE TABLE convenios (
-	id_convenio INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR (50) NOT NULL,
-	cod_ANS INT NOT NULL,
-	tipo VARCHAR (100),
-	telefone CHAR (14),
-   	email VARCHAR (50),
-	site VARCHAR (50),
-	dt_inicio DATE NOT NULL,
-	dt_fim DATE NOT NULL,
-	cobertura TEXT,
-	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
