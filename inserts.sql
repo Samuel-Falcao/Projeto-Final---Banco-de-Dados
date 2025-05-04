@@ -220,8 +220,8 @@ VALUES
 (79, 'Unimed Bahia'),
 (80, 'Hapvida');
 
--- INSERTS EM FUNCIONÁRIOSCREATE TABLE funcionarios (
-INSERT INTO funcionarios (id_usuario, cargo, setor, salario) # Alterar 
+-- INSERTS EM FUNCIONÁRIOS
+INSERT INTO funcionarios (id_usuario, cargo, setor, salario)
 VALUES 
 (81, 'Recepcionista', 'Atendimento', 1650.00),
 (82, 'Auxiliar de Limpeza', 'Serviços Gerais', 1400.00),
@@ -450,7 +450,7 @@ VALUES
 (null, 'cartão de débito', 'ativo'),
 (null, 'boleto', 'inativo');
 
-#TABELA DE  convenios 
+#TABELA DE convênios 
 INSERT INTO convenios
 VALUES
 (null, 'Saúde Total', 123456, 'Empresarial', '(11) 3333-4444', 'contato@saudetotal.com.br', 'http://www.saudetotal.com.br/', '2021-01-01', '2025-12-31', 'Ambulatorial + Hospitalar com Obstetrícia (consultas, exames, internações e parto)', 'ativo'),
@@ -494,5 +494,46 @@ VALUES
 (null, 'AtivaClinic Saúde', 200014, 'Coletivo por Adesão', '(98) 3000-9090', 'suporte@ativaclinic.com.br', 'www.ativaclinic.com.br', '2022-11-01', '2025-10-31', 'Ambulatorial com cobertura em clínicas e consultórios médicos', 'inativo'),
 (null, 'BemClin Planos Médicos', 200015, 'Individual', '(84) 4001-6655', 'relacionamento@bemclin.com.br', 'www.bemclin.com.br', '2023-03-05', '2026-03-04', 'Consultas clínicas, especialidades e exames de rotina', 'inativo');
 
-
-
+-- ADIÇÃO DE INSERTS DA TABELA AGENDAMENTOS
+INSERT INTO agendamentos (dt_agendada, sts, descricao, id_paciente, id_medico, id_exames, id_pagamento, id_convenio)
+VALUES
+('2025-05-02 21:30', 'Agendado', 'Consulta com urologista - Exame de ácido úrico', 1, 1, 13, 3, 1),
+('2025-05-12 11:30', 'Agendado', 'Consulta com urologista - Exame de urina tipo 1 (EAS)', 4, 1, 6, 1, 2),
+('2025-05-16 09:10', 'Agendado', 'Consulta com psiquiátrica - Exame de vitamina B12', 2, 2, 12, 4, 5),
+('2025-05-17 12:30', 'Agendado', 'Consulta com Oncologista -  Hemograma completo', 7, 3, 1, 4, 12),
+('2025-05-17 13:45', 'Agendado', 'Consulta com Ortopedista - Raio-X da coluna lombar', 9, 4, 25, 1, 23),
+('2025-05-19 16:50', 'Agendado', 'Consulta com Ortopedista - Exame de densitometria óssea', 10, 4, 26, 1, 6),
+('2025-05-20 10:20', 'Agendado', 'Consulta com Otorrinolaringologista - Exame físico geral', 11, 6, 30, 1, 6),
+('2025-05-20 11:25', 'Agendado', 'Consulta com Oftalmologista - Exame oftalmológico básico', 15, 5, 39, 3, 31),
+('2025-05-22 09:40', 'Agendado', 'Consulta com Oftalmologista - Exame de glicemia em jejum', 26, 5, 2, 3, 39),
+('2025-05-23 15:25', 'Agendado', 'Consulta com Clínico Geral - Aferição da pressão arterial', 20, 8, 29, 3, 2),
+('2025-05-23 18:15', 'Agendado', 'Consulta com Gastroenterologista - Exame de triglicerídeos', 14, 10, 4, 3, 16),
+('2025-05-24 07:05', 'Agendado', 'Consulta com Cardiologista - Eletrocardiograma (ECG)', 12, 11, 19, 2, 11),
+('2025-05-24 19:00', 'Agendado', 'Consulta com Neurologista - Exame neurológico básico', 37, 12, 32, 4, 9),
+('2025-05-25 09:20', 'Agendado', 'Consulta com Pneumologista - Exame de espirometria', 30, 23, 34, 2, 30),
+('2025-05-24 14:30', 'Agendado', 'Consulta com Gastroenterologista - Exame de ferritina', 40, 22, 10, 1, 38),
+('2025-05-25 20:30', 'Agendado', 'Consulta com Oncologista - Exame de vitamina D (25-OH)', 32, 30, 11, 1, 40),
+('2025-06-01 09:30', 'Agendado', 'Consulta com Cardiologista - Ecodopplercardiograma', 26, 40, 20, 2, 35),
+('2025-06-03 10:10', 'Agendado', 'Consulta com Mastologista - Exame de mamografia', 8, 25, 24, 4, 40),
+('2025-06-03 14:00', 'Agendado', 'Consulta com Neurologista - Exame de hemoglobina glicada (HbA1c)', 15, 12, 8, 4, 26),
+('2025-06-06 12:00', 'Agendado', 'Consulta com Otorrinolaringologista - Hemograma Completo', 16, 6, 1, 3, 22),
+('2025-06-06 16:45', 'Agendado', 'Consulta com Endócrinologista - Exame de TSH e T4 livre', 26, 9, 5, 3, 21),
+('2025-06-07 18:20', 'Agendado', 'Consulta com Dermatologista - Exame de vitamina B12', 18, 20, 12, 3, 18),
+('2025-06-09 07:45', 'Agendado', 'Consulta com Ginecologista - Ultrassonografia transvaginal', 21, 31, 21, 2, 13),
+('2025-06-09 15:25', 'Agendado', 'Consulta com Otorrinolaringologista - Hemograma Completo', 33, 33, 1, 2, 19),
+('2025-06-10 07:10', 'Agendado', 'Consulta com Pneumologista - Exame de ausculta pulmonar', 38, 23, 28, 1, 4),
+('2025-06-12 17:45', 'Agendado', 'Consulta com Cardiologista - Exame de colesterol total e frações (HDL, LDL, VLDL)', 34, 27, 3, 4, 29),
+('2025-06-12 16:30', 'Agendado', 'Consulta com Oncologista - Exame de vitamina D (25-OH)', 35, 3, 11, 3, 10),
+('2025-06-12 09:35', 'Agendado', 'Consulta com Oftamologista - Exame oftalmológico básico', 25, 5, 39, 3, 14),
+('2025-06-14 20:00', 'Agendado', 'Consulta com Oftamologista - Exame de glicemia de jejum', 24, 5, 2, 4, 23),
+('2025-06-14 19:40', 'Agendado', 'Consulta com Cardiologista - Exame de triglicerídios', 12, 14, 4, 2, 24),
+('2025-06-16 18:10', 'Agendado', 'Consulta com Neurologista - Avaliação postural e de marcha', 1, 24, 40, 1, 27),
+('2025-06-16 13:05', 'Agendado', 'Consulta com Urologista - Ultrassonografia da próstata', 39, 15, 22, 1, 17),
+('2025-06-18 07:10', 'Agendado', 'Consulta com Oftamologista - Exame de hemoglobina glicada (HbA1c)', 37, 19, 8, 4, 6),
+('2025-06-18 10:30', 'Agendado', 'Consulta com Oftamologista - Exame oftalmológico básico', 28, 19, 39, 3, 8),
+('2025-06-19 13:50', 'Agendado', 'Consulta com Ortopedista - Exame de densitometria óssea', 11, 18, 26, 3, 9),
+('2025-06-20 20:20', 'Agendado', 'Consulta com Cardiologista - Exame de MAPA 24h', 10, 11, 35, 2, 20),
+('2025-06-20 15:40', 'Agendado', 'Consulta com Endócrinologista - Exame de colesterol total e frações (HDL, LDL, VLDL)', 4, 21, 3, 2, 9),
+('2025-06-21 14:55', 'Agendado', 'Consulta com Angiologista - Exame físico geral', 30, 26, 30, 4, 28),
+('2025-06-22 10:50', 'Agendado', 'Consulta com Cardiologista - Exame de ausculta cardíaca', 10, 37, 27, 4, 26),
+('2025-06-24 19:00', 'Agendado', 'Consulta com Gastroenterologista - Exame de glicemia de jejum', 24, 22, 2, 3, 3);

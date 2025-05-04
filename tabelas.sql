@@ -8,7 +8,7 @@ CREATE TABLE usuarios (
     cpf CHAR(14) NOT NULL UNIQUE KEY,
     email VARCHAR(45) NOT NULL, 
     senha VARCHAR(45) NOT NULL,
-    telefone CHAR(15), # ADICIONAR TELEFONE 
+    telefone CHAR(15),
     tipo_usuario ENUM('Médico', 'Paciente', 'Funcionário') NOT NULL,
     sts_usuario ENUM('Ativo','Inativo') DEFAULT 'Ativo'
 );
@@ -16,7 +16,7 @@ CREATE TABLE usuarios (
 CREATE TABLE medicos (
 	id_medico INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
-    crm VARCHAR(30) NOT NULL UNIQUE KEY, # ALTERAR NA TABELA 
+    crm VARCHAR(30) NOT NULL UNIQUE KEY,
     especialidade VARCHAR(60) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
@@ -110,7 +110,6 @@ CREATE TABLE prontuarios (
 	diagnostico TEXT,
 	conduta TEXT,
 	observacoes TEXT,
-	
 	FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
 	FOREIGN KEY (id_medico) REFERENCES medicos(id_medico),
 	FOREIGN KEY (id_agendamento) REFERENCES agendamentos(id_agendamento)
