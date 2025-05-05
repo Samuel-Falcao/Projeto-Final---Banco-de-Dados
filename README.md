@@ -21,8 +21,6 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 - [x] Tabelas criadas no script SQL
 
 - [x] Relacionamentos definidos com `FOREIGN KEY`
-=======
-- [X] Relacionamentos definidos com `FOREIGN KEY`
 
 ### 🧾 Comandos SQL
 
