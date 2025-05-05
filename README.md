@@ -27,15 +27,15 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 ### 🧾 Comandos SQL
 
 - INSERTS realizados: **10 de 10**
-- UPDATES realizados: **0 de 3**
-- DELETES realizados: **0 de 3**
+- UPDATES realizados: **1 de 3**
+- DELETES realizados: **1 de 3**
 
 ### 🧠 Lógica Avançada
 
 - PROCEDURES criadas: **0 de 3**
 - FUNCTIONS criadas: **1 de 3**
 - TRIGGERS criadas: **1 de 5**
-- VIEWS criadas: **0 de 10**
+- VIEWS criadas: **2 de 10**
 
 ### 🔍 Consultas SQL
 
