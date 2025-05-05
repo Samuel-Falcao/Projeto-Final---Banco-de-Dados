@@ -1,8 +1,8 @@
 UPDATE usuarios
 SET 
     data_nascimento = CASE
-        WHEN id_usuario = 1 THEN '1990-08-05'  -- Ajuste para 35 anos
-        WHEN id_usuario = 19 THEN '1972-11-05'  -- Ajuste para 41 anos
+        WHEN id_usuario = 1 THEN '1990-08-05'  
+        WHEN id_usuario = 19 THEN '1972-11-05'  
         ELSE data_nascimento
     END,
     sts_usuario = CASE 
@@ -18,3 +18,17 @@ SET
         ELSE email
     END
 WHERE id_usuario IN (1, 19, 11, 21, 46, 57, 59, 66);
+
+
+Update exames
+SET sts = 'ativo'
+WHERE id_exame IN (7,10,33);
+
+UPDATE exames
+SET sts = 'ativo'
+WHERE id_exame IN (
+  SELECT id_exame
+  FROM exames
+  WHERE valor > 200 AND tp_exame = 'imagem'
+);
+
