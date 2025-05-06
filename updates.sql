@@ -19,8 +19,7 @@ SET
     END
 WHERE id_usuario IN (1, 19, 11, 21, 46, 57, 59, 66);
 
-
-Update exames
+UPDATE exames
 SET sts = 'ativo'
 WHERE id_exame IN (7,10,33);
 

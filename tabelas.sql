@@ -62,7 +62,7 @@ CREATE TABLE exames (
 	nome VARCHAR (50) NOT NULL, 
 	tp_exame ENUM('laboratorial', 'imagem', 'clínico') NOT NULL,
 	valor DECIMAL (10,2) NOT NULL,
-	instrucoes VARCHAR (100), #preparo para fazr o exame (ex:jejum medicação)
+	instrucoes VARCHAR (100), 
 	descricao VARCHAR (100),
 	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
