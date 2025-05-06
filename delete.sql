@@ -12,3 +12,7 @@ WHERE id_usuario IN (79, 80) AND tipo_usuario = 'Paciente';
 #Apaga os dois ultimos convenios 
 Delete from convenios 
 WHERE id_convenio IN (39,40);
+
+#Apaga a consulta do urologista com o exame de ultrassonografia da próstata
+DELETE FROM agendamentos
+WHERE id_agendamento = 32;

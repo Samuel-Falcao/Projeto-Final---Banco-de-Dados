@@ -32,3 +32,14 @@ WHERE id_exame IN (
   WHERE valor > 200 AND tp_exame = 'imagem'
 );
 
+UPDATE agendamentos
+SET sts = 'Concluído'
+WHERE id_agendamento = 1;
+
+UPDATE agendamentos
+SET dt_agendada = '2025-06-30 08:00:00'
+WHERE id_agendamento = 5;
+
+UPDATE agendamentos
+SET sts = 'Remarcado'
+WHERE id_agendamento = 5;
