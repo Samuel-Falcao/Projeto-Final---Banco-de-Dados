@@ -19,29 +19,25 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 
 ### 🗂️ Estrutura do Banco
 - [x] Tabelas criadas no script SQL
-
 - [x] Relacionamentos definidos com `FOREIGN KEY`
 
 ### 🧾 Comandos SQL
-
 - INSERTS realizados: **10 de 10**
 - UPDATES realizados: **3 de 3**
 - DELETES realizados: **3 de 3**
 
 ### 🧠 Lógica Avançada
-
-- PROCEDURES criadas: **1 de 3**
-- FUNCTIONS criadas: **1 de 3**
+- PROCEDURES criadas: **3 de 3**
+- FUNCTIONS criadas: **3 de 3**
 - TRIGGERS criadas: **3 de 5**
-- VIEWS criadas: **2 de 10**
+- VIEWS criadas: **3 de 10**
 
 ### 🔍 Consultas SQL
-
-- [ ] Consultas com `JOIN`
-- [ ] Filtros com `WHERE`
-- [ ] Agrupamentos com `GROUP BY`
-- [ ] Filtros em grupos com `HAVING`
-- [ ] Ordenações com `ORDER BY`
+- [X] Consultas com `JOIN`
+- [X] Filtros com `WHERE`
+- [X] Agrupamentos com `GROUP BY`
+- [X] Filtros em grupos com `HAVING`
+- [X] Ordenações com `ORDER BY`
 
 ## 👥 Integrantes do Grupo
 - **Samuel Falcão**
