@@ -122,6 +122,5 @@ CREATE TABLE receitas_medicas (
 	dt_receita DATETIME NOT NULL,
 	medicamentos TEXT NOT NULL,
 	bula TEXT,
-	
 	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario)
 );
