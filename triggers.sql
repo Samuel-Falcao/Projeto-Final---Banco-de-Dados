@@ -37,3 +37,16 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+#Trigger para atualizar data de atualização dos exames
+DELIMITER //
+
+CREATE TRIGGER atualiza_data_alteracao
+BEFORE UPDATE ON exames
+FOR EACH ROW
+BEGIN
+    SET NEW.data_alteracao = NOW();
+END;
+//
+
+DELIMITER ;

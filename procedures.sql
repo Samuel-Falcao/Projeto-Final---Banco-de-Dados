@@ -50,3 +50,21 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+
+#Procedure para iserir um novo exame, com parâmetros para os dados principais
+DELIMITER //
+CREATE PROCEDURE inserir_exame(
+    IN p_nome VARCHAR(100),
+    IN p_tp_exame ENUM('laboratorial', 'imagem', 'clínico'),
+    IN p_descricao TEXT,
+    IN p_instrucoes VARCHAR(500),
+    IN p_valor DECIMAL(10,2),
+    IN p_status ENUM('ativo', 'inativo')
+)
+BEGIN
+    INSERT INTO exames (nome, tp_exame, descricao, instrucoes, valor, status)
+    VALUES (p_nome, p_tp_exame, p_descricao, p_instrucoes, p_valor, p_status);
+END;
+//
+DELIMITER ;

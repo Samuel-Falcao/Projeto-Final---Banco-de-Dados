@@ -66,6 +66,7 @@ CREATE TABLE exames (
 	descricao VARCHAR (100),
 	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
+ALTER TABLE exames ADD COLUMN data_alteracao DATETIME DEFAULT CURRENT_TIMESTAMP; #Para trigger
 
 CREATE TABLE convenios (
 	id_convenio INT PRIMARY KEY AUTO_INCREMENT,
