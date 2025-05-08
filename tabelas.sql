@@ -107,7 +107,6 @@ CREATE TABLE prontuarios (
 	dt_atendimento DATETIME NOT NULL,
 	queixa_principal TEXT,
 	historico_clinico TEXT,
-	exame_fisico TEXT,
 	diagnostico TEXT,
 	conduta TEXT,
 	observacoes TEXT,
@@ -115,6 +114,19 @@ CREATE TABLE prontuarios (
 	FOREIGN KEY (id_medico) REFERENCES medicos(id_medico),
 	FOREIGN KEY (id_agendamento) REFERENCES agendamentos(id_agendamento)
 );
+
+#Tabela criada para ter um relacionamento entre exames e prontuarios
+CREATE TABLE exames_prontuarios (
+	id_exame_prontuario INT PRIMARY KEY AUTO_INCREMENT,
+	id_prontuario INT NOT NULL,
+	id_exame INT NOT NULL,
+	resultado TEXT,
+	data_resultado DATETIME,
+	
+	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario),
+	FOREIGN KEY (id_exame) REFERENCES exames(id_exame)
+);
+
 
 CREATE TABLE receitas_medicas (
 	id_receita INT PRIMARY KEY AUTO_INCREMENT,
