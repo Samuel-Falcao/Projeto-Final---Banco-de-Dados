@@ -80,3 +80,14 @@ BEGIN
     );
 END$$
 DELIMITER ;
+
+#PROCEDURE PARA CANCELAR AGENDAMENTO
+DELIMITER $$
+CREATE PROCEDURE cancelar_agendamento(IN p_id_agendamento INT)
+BEGIN
+    UPDATE agendamentos
+    SET sts = 'Cancelado'
+    WHERE id_agendamento = p_id_agendamento;
+END $$
+
+DELIMITER ;

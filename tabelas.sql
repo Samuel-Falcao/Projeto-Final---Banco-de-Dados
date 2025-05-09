@@ -99,6 +99,9 @@ CREATE TABLE agendamentos(
     FOREIGN KEY (id_exames) REFERENCES exames (id_exame)
 );
 
+ALTER TABLE agendamentos
+ADD COLUMN data_alteracao DATETIME DEFAULT CURRENT_TIMESTAMP; #TABELA ALTERADA PARA A TRIGGER FUNCIONAR
+
 CREATE TABLE prontuarios (
 	id_prontuario INT PRIMARY KEY AUTO_INCREMENT,
 	id_paciente INT NOT NULL,
