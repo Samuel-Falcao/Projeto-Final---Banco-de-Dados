@@ -89,3 +89,35 @@ SELECT
     id_exames
 FROM agendamentos
 ORDER BY dt_agendada ASC;
+
+#Trará o número total de exames realizados por forma de pagamento e o valor total gasto.
+CREATE VIEW exames_por_forma_pagamento AS 
+SELECT 
+    fp.nome AS forma_pagamento, 
+    COUNT(e.id_exame) AS total_exames_realizados, 
+    SUM(e.valor) AS valor_total_exames
+FROM 
+    exames e
+JOIN 
+    formas_de_pagamento fp ON e.id_exame = fp.id_pagamento  
+WHERE 
+    e.sts = 'ativo'  
+GROUP BY 
+    fp.nome
+HAVING 
+    COUNT(e.id_exame) > 0  
+ORDER BY 
+    valor_total_exames DESC;
+    
+#Agrupa os exames pelo tipo (tp_exame) e mostra a quantidade total e o valor total de exames realizados por cada tipo.    
+CREATE VIEW exames_por_tipo AS
+SELECT
+    tp_exame AS tipo_exame,
+    COUNT(id_exame) AS total_exames,
+    SUM(valor) AS valor_total_exames
+FROM
+    exames
+WHERE
+    sts = 'ativo' 
+GROUP BY
+    tp_exame;
