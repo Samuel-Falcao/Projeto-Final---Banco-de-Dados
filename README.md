@@ -30,7 +30,7 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 - PROCEDURES criadas: **3 de 3**
 - FUNCTIONS criadas: **3 de 3**
 - TRIGGERS criadas: **3 de 5**
-- VIEWS criadas: **3 de 10**
+- VIEWS criadas: **6 de 10**
 
 ### 🔍 Consultas SQL
 - [X] Consultas com `JOIN`
