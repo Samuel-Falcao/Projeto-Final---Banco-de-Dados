@@ -1,3 +1,4 @@
+# ATUALIZA DATA DE NASCIMENTO, STATUS, TELEFONE E E-MAIL DE USUÁRIOS ESPECÍFICOS 
 UPDATE usuarios
 SET 
     data_nascimento = CASE
@@ -18,7 +19,7 @@ SET
         ELSE email
     END
 WHERE id_usuario IN (1, 19, 11, 21, 46, 57, 59, 66);
-
+# ATUALIZA STATUS PARA 'ATIVO' DE EXAMES ESPECÍFICOS POR ID  
 UPDATE exames
 SET sts = 'ativo'
 WHERE id_exame IN (7,10,33);
@@ -30,15 +31,15 @@ WHERE id_exame IN (
   FROM exames
   WHERE valor > 200 AND tp_exame = 'imagem'
 );
-
+# ATUALIZA STATUS PARA 'CONCLUÍDO' DO AGENDAMENTO COM ID 1 
 UPDATE agendamentos
 SET sts = 'Concluído'
 WHERE id_agendamento = 1;
-
+# ATUALIZA DATA AGENDADA NO AGENDAMENTO COM ID 5  
 UPDATE agendamentos
 SET dt_agendada = '2025-06-30 08:00:00'
 WHERE id_agendamento = 5;
-
+# ATUALIZA STATUS PARA 'REMARCADO' NO AGENDAMENTO COM ID 5 
 UPDATE agendamentos
 SET sts = 'Remarcado'
 WHERE id_agendamento = 5;

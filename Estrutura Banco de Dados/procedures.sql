@@ -1,4 +1,4 @@
-# Cadastra um novo usuario podendo definir qual o tipo do usuario sendo paciente, funcionário ou médico
+# CADASTRA UM NOVO USUÁRIO PODENDO DEFINIR QUAL O TIPO DO USUÁRIO SENDO PACIENTE, FUNCIONÁRIO OU MÉDICO  
 DELIMITER $$
 CREATE PROCEDURE cadastrar_usuario (
     IN p_nome_completo VARCHAR(50),
@@ -51,7 +51,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-#Procedure para iserir um novo exame, com parâmetros para os dados principais
+# INSERIR UM NOVO EXAME, COM PARÂMETROS PARA OS DADOS PRINCIPAIS  
 DELIMITER $$
 CREATE PROCEDURE inserir_exame(
     IN p_nome VARCHAR(100),
@@ -81,7 +81,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-#PROCEDURE PARA CANCELAR AGENDAMENTO
+# CANCELAR AGENDAMENTO
 DELIMITER $$
 CREATE PROCEDURE cancelar_agendamento(IN p_id_agendamento INT)
 BEGIN

@@ -1,4 +1,4 @@
--- INSERTS MÉDICOS 
+# INSERTS MÉDICOS 
 INSERT INTO usuarios (id_usuario, nome_completo, data_nascimento, cpf, email, senha, telefone, tipo_usuario, sts_usuario)
 VALUES
 (1, 'Luis Alves Araújo', '2008-07-13', '80827000090', 'luis.arajo@example.com', 'M&di123', '11998765432', 'Médico', 'Ativo'),
@@ -43,7 +43,7 @@ VALUES
 (40, 'Laura Martins Carvalho', '1994-01-11', '87611458078', 'laura.carvalho_m@example.com', 'M&di123', '71993454322', 'Médico', 'Ativo');
 
 
--- INSERTS PACIENTES
+# INSERTS PACIENTES
 INSERT INTO usuarios (id_usuario, nome_completo, data_nascimento, cpf, email, senha, telefone, tipo_usuario, sts_usuario)
 VALUES
 (41, 'Martim Souza Rocha', '1978-03-20', '23839440335', 'MartimSouzaRocha@rhyta.com', 'P@c123', '63944457972', 'Paciente', 'Ativo'),
@@ -88,7 +88,7 @@ VALUES
 (80, 'Livia Pinto Rodrigues', '1978-12-03', '57732304292', 'LiviaPintoRodrigues@teleworm.us', 'P@c123', '5578227515', 'Paciente', 'Ativo');
 
 
--- INSERTS FUNCIONÁRIOS
+# INSERTS FUNCIONÁRIOS
 INSERT INTO usuarios (id_usuario, nome_completo, data_nascimento, cpf, email, senha, telefone, tipo_usuario, sts_usuario)
 VALUES 
 (81, 'Carlos Eduardo Ribeiro', '1985-06-11', '57389456123', 'CarlosEduardoRibeiro@teleworm.us', 'Fc#123', '1122334455', 'Funcionário', 'Ativo'),
@@ -132,7 +132,7 @@ VALUES
 (119, 'Fernando Costa Almeida', '1990-04-01', '73682714934', 'FernandoCostaAlmeida@teleworm.us', 'Fc#123', '11897352468', 'Funcionário', 'Inativo'),
 (120, 'Ana Cláudia Ribeiro', '1984-08-19', '49283756103', 'AnaClaudiaRibeiro@jourrapide.com', 'Fc#123', '11678423945', 'Funcionário', 'Ativo');
 
--- INSERTS EM MÉDICOS ADICIONAR NOVOS CRMS
+# INSERTS EM MÉDICOS ADICIONAR NOVOS CRMS
 INSERT INTO medicos (id_usuario, crm, especialidade) 
 VALUES 
 (1, 'CRM|BA362520', 'Urologia'),
@@ -176,7 +176,7 @@ VALUES
 (39, 'CRM|BA040207', 'Neonatologia'),
 (40, 'CRM|BA040208', 'Medicina do Trabalho');
 
--- INSERTS EM PACIENTES 
+# INSERTS EM PACIENTES 
 INSERT INTO pacientes (id_usuario, plano_de_saude)
 VALUES 
 (41, 'Bradesco Saúde'),
@@ -220,7 +220,7 @@ VALUES
 (79, 'Unimed Bahia'),
 (80, 'Hapvida');
 
--- INSERTS EM FUNCIONÁRIOS
+# INSERTS EM FUNCIONÁRIOS
 INSERT INTO funcionarios (id_usuario, cargo, setor, salario)
 VALUES 
 (81, 'Recepcionista', 'Atendimento', 1650.00),
@@ -264,7 +264,7 @@ VALUES
 (119, 'Auxiliar de Limpeza', 'Serviços Gerais', 1400.00),
 (120, 'Técnico de Enfermagem', 'Enfermagem', 2250.00);
 
--- INSERTS EM ENDEREÇOS
+# ENDEREÇOS
 INSERT INTO enderecos (id_usuario, tipo_endereco, endereco, numero, complemento, bairro, cidade, estado, cep)
 VALUES
 (1, 'Comercial', 'Rua do Sol', '6153', 'Apartamento', 'Cabula', 'Salvador', 'BA', '43043-515'),
@@ -388,8 +388,7 @@ VALUES
 (119, 'Comercial', 'Travessa das Flores', '1399', 'Casa', 'Rio Vermelho', 'Salvador', 'BA', '46981-331'),
 (120, 'Residencial', 'Alameda Santos', '4625', 'Casa', 'Pituba', 'Salvador', 'BA', '44546-502');
 
-#Tabelas de exames
--- EXAMES LABORATORIAIS
+# EXAMES LABORATORIAIS
 INSERT INTO exames
 VALUES
 (null, 'Hemograma completo', 'laboratorial', 50.00, 'Jejum não obrigatório', 'Avalia células do sangue (glóbulos vermelhos, brancos e plaquetas); detecta infecções, anemias, inflamações.', 'ativo'),
@@ -407,7 +406,7 @@ VALUES
 (null, 'Ácido úrico', 'laboratorial', 40.00, 'Jejum de 4–8h', 'Relacionado à gota e distúrbios renais.', 'inativo'),
 (null, 'Beta-HCG', 'laboratorial', 50.00, 'Jejum não obrigatório', 'Detecta gravidez nas mulheres. Também usado para rastrear algumas doenças.', 'ativo');
 
--- EXAMES DE IMAGEM
+# EXAMES DE IMAGEM
 INSERT INTO exames
 VALUES
 (null, 'Raio-X de tórax', 'imagem', 150.00, 'Retirar objetos metálicos, jejum não necessário.', 'Avalia pulmões, coração e estrutura óssea torácica.', 'ativo'),
@@ -423,7 +422,7 @@ VALUES
 (null, 'Raio-X da coluna lombar', 'imagem', 180.00, 'Sem preparo.', 'Avaliação de dores nas costas, hérnias, problemas ósseos.', 'ativo'),
 (null, 'Densitometria óssea', 'imagem', 300.00, 'Evitar roupas com metal.', 'Avaliação de osteoporose. Muito indicado após os 50 anos.', 'inativo');
 
--- EXAMES CLÍNICOS
+# EXAMES CLÍNICOS
 INSERT INTO exames
 VALUES
 (null, 'Ausculta cardíaca', 'clínico', 0.00, 'Sem preparo', 'Uso do estetoscópio para avaliar sons do coração e pulmões.', 'ativo'),
@@ -441,7 +440,7 @@ VALUES
 (null, 'Exame oftalmológico básico', 'clínico', 100.00, 'Sem colírios ou lentes antes do exame', 'Avaliação da acuidade visual, pupilas e fundo de olho', 'inativo'),
 (null, 'Avaliação postural e de marcha', 'clínico', 90.00, 'Sem preparo específico', 'Exame físico para avaliar equilíbrio, postura e padrão de caminhada', 'inativo');
 
-#Tabela de formas de pagamento
+# FORMAS DE PAGAMENTO
 INSERT INTO formas_de_pagamento
 VALUES
 (null, 'pix', 'ativo'),
@@ -450,7 +449,7 @@ VALUES
 (null, 'cartão de débito', 'ativo'),
 (null, 'boleto', 'inativo');
 
-#TABELA DE convênios 
+# CONVÊNIOS
 INSERT INTO convenios
 VALUES
 (null, 'Saúde Total', 123456, 'Empresarial', '(11) 3333-4444', 'contato@saudetotal.com.br', 'http://www.saudetotal.com.br/', '2021-01-01', '2025-12-31', 'Ambulatorial + Hospitalar com Obstetrícia (consultas, exames, internações e parto)', 'ativo'),
@@ -494,7 +493,7 @@ VALUES
 (null, 'AtivaClinic Saúde', 200014, 'Coletivo por Adesão', '(98) 3000-9090', 'suporte@ativaclinic.com.br', 'www.ativaclinic.com.br', '2022-11-01', '2025-10-31', 'Ambulatorial com cobertura em clínicas e consultórios médicos', 'inativo'),
 (null, 'BemClin Planos Médicos', 200015, 'Individual', '(84) 4001-6655', 'relacionamento@bemclin.com.br', 'www.bemclin.com.br', '2023-03-05', '2026-03-04', 'Consultas clínicas, especialidades e exames de rotina', 'inativo');
 
--- ADIÇÃO DE INSERTS DA TABELA AGENDAMENTOS
+# AGENDAMENTOS
 INSERT INTO agendamentos (dt_agendada, sts, descricao, id_paciente, id_medico, id_exames, id_pagamento, id_convenio)
 VALUES
 ('2025-05-02 21:30', 'Agendado', 'Consulta com urologista - Exame de ácido úrico', 1, 1, 13, 3, 1),
@@ -538,9 +537,7 @@ VALUES
 ('2025-06-22 10:50', 'Agendado', 'Consulta com Cardiologista - Exame de ausculta cardíaca', 10, 37, 27, 4, 26),
 ('2025-06-24 19:00', 'Agendado', 'Consulta com Gastroenterologista - Exame de glicemia de jejum', 24, 22, 2, 3, 3);
 
--- ADIÇÃO DE INSRTES DA TABELA DE PRONTUARIOS, EXAMES_PRONTURAIOS E RECEITAS MÉDICAS
-
--- TABELA PRONTUARIOS
+# PRONTUARIOS
 INSERT INTO prontuarios (id_paciente, id_medico, id_agendamento, dt_atendimento, queixa_principal, historico_clinico, diagnostico, conduta, observacoes)
 VALUES
 (1, 1, 1, '2025-03-10 08:30:00', 'Dor de cabeça intensa', 'Paciente com histórico de enxaqueca', 'Enxaqueca', 'Prescrito analgésico', 'Acompanhar evolução.'),
@@ -584,7 +581,7 @@ VALUES
 (39, 39, 39,'2025-04-19 08:30:00','Pele ressecada','Tempo seco','Dermatite','Hidratante prescrito','Evitar sabonetes agressivos.'),
 (40, 40, 40,'2025-04-20 08:30:00','Tremores nas mãos','Café em excesso','Excesso de cafeína','Reduzir consumo','Agendado clínico geral.');
 
--- TABELA EXAMES_PRONTUARIOS
+# EXAMES_PRONTUARIOS
 INSERT INTO exames_prontuarios (id_prontuario, id_exame, resultado, data_resultado)
 VALUES
 (41, 1, 'Sem alterações significativas.', '2025-03-01 14:10:00'),
@@ -628,7 +625,7 @@ VALUES
 (79, 39, 'Resíduo de infecção anterior.', '2025-04-08 14:45:00'),
 (80, 40, 'Sem anormalidades detectadas.', '2025-04-09 14:30:00');
 
--- TABELA DE RECEITAS_MEDICAS
+# RECEITAS_MEDICAS
 INSERT INTO receitas_medicas (id_prontuario, dt_receita, medicamentos, bula)
 VALUES
 (81, '2025-04-01 10:15:00', 'Paracetamol 500mg, 1 comprimido a cada 8h por 5 dias.', 'https://bula.paracetamol.com'),

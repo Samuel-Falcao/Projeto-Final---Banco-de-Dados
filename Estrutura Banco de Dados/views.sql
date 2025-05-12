@@ -1,4 +1,4 @@
-# Verifica os usuarios maiores de idade
+# VERIFICA OS USUÁRIOS MAIORES DE IDADE  
 CREATE VIEW v_usuarios_maiores_18 AS
 SELECT 
     u.id_usuario,
@@ -10,7 +10,7 @@ FROM
     usuarios u
 WHERE 
     TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) >= 18;
-# Verifica os usuarios menores de idade ( Mesma estrutura da anterior alterando apenas o operador lógico para questão de controle interno )
+# VERIFICA OS USUÁRIOS MENORES DE IDADE (MESMA ESTRUTURA DA ANTERIOR, ALTERANDO APENAS O OPERADOR LÓGICO PARA QUESTÃO DE CONTROLE INTERNO)
 CREATE VIEW v_usuarios_menores_18 AS
 SELECT 
     u.id_usuario,
@@ -22,8 +22,8 @@ FROM
     usuarios u
 WHERE 
     TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) < 18;
-# Exibe o total de agendamentos por médicos com o status de usuário 'Ativo' retorna o ID do médico, seu nome, e o número total de agendamentos feitos por ele
-# filtrando apenas os médicos que tem mais de 3 agendamentos e ordena os resultados de forma decrescente com base no número de agendamentos.
+# EXIBE O TOTAL DE AGENDAMENTOS POR MÉDICOS COM O STATUS DE USUÁRIO 'ATIVO', RETORNANDO O ID DO MÉDICO, SEU NOME, E O NÚMERO TOTAL DE AGENDAMENTOS FEITOS POR ELE 
+# FILTRANDO APENAS OS MÉDICOS QUE TÊM MAIS DE 3 AGENDAMENTOS E ORDENA OS RESULTADOS DE FORMA DECRESCENTE COM BASE NO NÚMERO DE AGENDAMENTOS  
 DELIMITER $$
 CREATE VIEW agendamentos_por_medico AS
 SELECT 
@@ -47,13 +47,13 @@ ORDER BY
 $$
 DELIMITER ;
 
-#VIEW DE NÚMERO DE CONSULTAS POR MÉDICO
+# NÚMERO DE CONSULTAS POR MÉDICO
 CREATE VIEW vw_consultas_por_medico AS
 SELECT id_medico, COUNT(*) AS total_consultas
 FROM agendamentos
 GROUP BY id_medico;
 
-#VIEWS DE AGENDAMENTOS FUTUROS
+# AGENDAMENTOS FUTUROS
 CREATE VIEW vw_agendamentos_futuros AS
 SELECT 
     a.id_agendamento,
@@ -75,7 +75,7 @@ JOIN convenios c ON a.id_convenio = c.id_convenio
 JOIN formas_de_pagamento pg ON a.id_pagamento = pg.id_pagamento
 WHERE a.dt_agendada > NOW();
 
-#VIEW QUE ORDENA OS AGENDAMENTOS DOS MAIS ANTIGOS AOS MAIS RECENTES
+# ORDENA OS AGENDAMENTOS DOS MAIS ANTIGOS AOS MAIS RECENTES
 CREATE VIEW vw_agendamentos_ordenados AS
 SELECT 
     id_agendamento,
@@ -90,7 +90,7 @@ SELECT
 FROM agendamentos
 ORDER BY dt_agendada ASC;
 
-#Trará o número total de exames realizados por forma de pagamento e o valor total gasto.
+# TRARÁ O NÚMERO TOTAL DE EXAMES REALIZADOS POR FORMA DE PAGAMENTO E O VALOR TOTAL GASTO  
 CREATE VIEW exames_por_forma_pagamento AS 
 SELECT 
     fp.nome AS forma_pagamento, 
@@ -109,7 +109,7 @@ HAVING
 ORDER BY 
     valor_total_exames DESC;
     
-#Agrupa os exames pelo tipo (tp_exame) e mostra a quantidade total e o valor total de exames realizados por cada tipo.    
+# AGRUPA OS EXAMES PELO TIPO (TP_EXAME) E MOSTRA A QUANTIDADE TOTAL E O VALOR TOTAL DE EXAMES REALIZADOS POR CADA TIPO   
 CREATE VIEW exames_por_tipo AS
 SELECT
     tp_exame AS tipo_exame,

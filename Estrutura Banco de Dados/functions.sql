@@ -1,4 +1,4 @@
--- FUNÇÃO PARA CONTAR AGENDAMENTOS COM BASE NO ID DO MÉDICO
+# FUNÇÃO PARA CONTAR AGENDAMENTOS COM BASE NO ID DO MÉDICO
 DELIMITER $$
 CREATE FUNCTION contar_agendamentos_medico(p_id_medico INT)
 RETURNS INT
@@ -11,10 +11,10 @@ BEGIN
     );
 END $$
 DELIMITER ;
-# Exemplo de uso:
+# EXEMPLO DE USO:
 SELECT contar_agendamentos_medico() AS total_agendamentos;
 
--- Funcão para calcular valor da consulta com desconto
+# FUNÇÃO PARA CALCULAR VALOR DA CONSULTA COM DESCONTO 
 DELIMITER //
 CREATE FUNCTION calcular_valor_com_desconto(valor DECIMAL(10,2), desconto_percentual INT)
 RETURNS DECIMAL(10,2)
@@ -25,10 +25,10 @@ BEGIN
     RETURN valor_final;
 END//
 DELIMITER ;
-#Exemplo de uso:
+# EXEMPLO DE USO:
 SELECT calcular_valor_com_desconto(300.00, 20); 
 
--- Função para buscar nome do usuario pelo id 
+# FUNÇÃO PARA BUSCAR NOME DO USUÁRIO PELO ID   
 DELIMITER $$
 CREATE FUNCTION buscar_nome_usuario(p_id_usuario INT)
 RETURNS VARCHAR(50)
@@ -41,5 +41,5 @@ BEGIN
     );
 END$$
 DELIMITER ;
-#Exemplo de uso:
+# EXEMPLO DE USO:
 SELECT buscar_nome_usuario(1) AS nome_usuario;

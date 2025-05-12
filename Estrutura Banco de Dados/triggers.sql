@@ -1,4 +1,4 @@
-# Atualiza status do médico após o delete
+# ATUALIZA STATUS DO MÉDICO APÓS O DELETE  
 DELIMITER $$
 CREATE TRIGGER t_atualizar_status_medico_ao_deletar
 BEFORE DELETE ON medicos
@@ -11,7 +11,7 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
-# Atualiza status do paciente após o delete
+# ATUALIZA STATUS DO PACIENTE APÓS O DELETE  
 DELIMITER $$
 CREATE TRIGGER t_atualizar_status_paciente_ao_deletar
 BEFORE DELETE ON pacientes
@@ -24,7 +24,7 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
-# Atualiza status do funcionário após o delete
+# ATUALIZA STATUS DO FUNCIONÁRIO APÓS O DELETE  
 DELIMITER $$
 CREATE TRIGGER t_atualizar_status_funcionario_ao_deletar
 BEFORE DELETE ON funcionarios
@@ -37,8 +37,7 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
-
-#Trigger para atualizar data de atualização dos exames
+# TRIGGER PARA ATUALIZAR DATA DE ATUALIZAÇÃO DOS EXAMES  
 DELIMITER //
 CREATE TRIGGER atualiza_data_alteracao
 BEFORE UPDATE ON exames
@@ -47,8 +46,7 @@ BEGIN
     SET NEW.data_alteracao = NOW();
 END//
 DELIMITER ;
-
-#TRIGGER PARA REGISTRAR DATA E HORA DE UM AGENDAMENTO
+# REGISTRAR DATA E HORA DE UM AGENDAMENTO
 DELIMITER $$
 
 CREATE TRIGGER trg_update_data_alteracao

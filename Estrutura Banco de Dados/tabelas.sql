@@ -66,7 +66,8 @@ CREATE TABLE exames (
 	descricao VARCHAR (100),
 	sts ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
-ALTER TABLE exames ADD COLUMN data_alteracao DATETIME DEFAULT CURRENT_TIMESTAMP; #Para trigger
+
+ALTER TABLE exames ADD COLUMN data_alteracao DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 CREATE TABLE convenios (
 	id_convenio INT PRIMARY KEY AUTO_INCREMENT,
@@ -118,7 +119,6 @@ CREATE TABLE prontuarios (
 	FOREIGN KEY (id_agendamento) REFERENCES agendamentos(id_agendamento)
 );
 
-#Tabela criada para ter um relacionamento entre exames e prontuarios
 CREATE TABLE exames_prontuarios (
 	id_exame_prontuario INT PRIMARY KEY AUTO_INCREMENT,
 	id_prontuario INT NOT NULL,
@@ -129,7 +129,6 @@ CREATE TABLE exames_prontuarios (
 	FOREIGN KEY (id_prontuario) REFERENCES prontuarios(id_prontuario),
 	FOREIGN KEY (id_exame) REFERENCES exames(id_exame)
 );
-
 
 CREATE TABLE receitas_medicas (
 	id_receita INT PRIMARY KEY AUTO_INCREMENT,
