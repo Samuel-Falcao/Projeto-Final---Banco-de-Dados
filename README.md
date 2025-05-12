@@ -14,7 +14,7 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 
 ## ✅ Checklist de Requisitos
 ### 📊 Modelagem
-- [x] Modelo Lógico (DER)
+- [x] Modelo Lógico 
 - [x] Modelo Físico
 
 ### 🗂️ Estrutura do Banco
@@ -22,15 +22,15 @@ Este projeto foi desenvolvido como parte do curso técnico de Desenvolvimento de
 - [x] Relacionamentos definidos com `FOREIGN KEY`
 
 ### 🧾 Comandos SQL
-- INSERTS realizados: **10 de 10**
-- UPDATES realizados: **3 de 3**
-- DELETES realizados: **3 de 3**
+- INSERTS realizados: **16 de 10**
+- UPDATES realizados: **6 de 3**
+- DELETES realizados: **5 de 3**
 
 ### 🧠 Lógica Avançada
 - PROCEDURES criadas: **3 de 3**
 - FUNCTIONS criadas: **3 de 3**
-- TRIGGERS criadas: **3 de 5**
-- VIEWS criadas: **6 de 10**
+- TRIGGERS criadas: **5 de 5**
+- VIEWS criadas: **7 de 10**
 
 ### 🔍 Consultas SQL
 - [X] Consultas com `JOIN`
