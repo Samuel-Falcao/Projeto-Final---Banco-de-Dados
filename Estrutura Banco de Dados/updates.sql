@@ -43,3 +43,7 @@ WHERE id_agendamento = 5;
 UPDATE agendamentos
 SET sts = 'Remarcado'
 WHERE id_agendamento = 5;
+# ATUALIZA A CONDUTA DE UM PACIENTE NO PRONTUARIO APÓS UM ERRO DE RELATAÇÃO DO PACIÊNTE
+UPDATE prontuarios
+SET conduta = 'Paciente orientado a manter repouso e hidratação'
+WHERE id_prontuario = 5;

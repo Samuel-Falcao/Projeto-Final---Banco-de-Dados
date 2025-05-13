@@ -91,3 +91,24 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+# UMA PROCEDURE QUE RECEBE UM DIAGNÓSTICO E RETORNA AS RECEITAS RELACIONADAS A ELE.
+DELIMITER //
+
+CREATE PROCEDURE sp_receitas_por_diagnostico (IN diag TEXT)
+BEGIN
+    SELECT 
+        r.id_receita,
+        r.dt_receita,
+        r.medicamentos,
+        r.bula,
+        p.diagnostico
+    FROM receitas_medicas r
+    JOIN prontuarios p ON p.id_prontuario = r.id_prontuario
+    WHERE p.diagnostico LIKE CONCAT('%', diag, '%')
+    ORDER BY r.dt_receita DESC;
+END;
+//
+
+DELIMITER ;
+-- EXEMPLO DE COMO CHAMAR: "CALL sp_receitas_por_diagnostico('asma');"

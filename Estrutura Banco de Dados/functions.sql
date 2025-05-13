@@ -43,3 +43,23 @@ END$$
 DELIMITER ;
 # EXEMPLO DE USO:
 SELECT buscar_nome_usuario(1) AS nome_usuario;
+
+# ESSA FUNÇÃO RETORNA QUANTOS EXAMES ESTÃO ASSOCIADOS A UM DETERMINADO PRONTUÁRIO.
+DELIMITER //
+
+CREATE FUNCTION fn_total_exames_por_prontuario (id INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE total INT;
+
+    SELECT COUNT(*) INTO total
+    FROM exames_prontuarios
+    WHERE id_prontuario = id;
+
+    RETURN total;
+END;
+//
+
+DELIMITER ;
+-- EXEMPLO DE COMO USAR: "SELECT fn_total_exames_por_prontuario(10);"

@@ -121,3 +121,43 @@ WHERE
     sts = 'ativo' 
 GROUP BY
     tp_exame;
+
+# MOSTRAR O TOTAL DE PRONTUÁRIOS POR MÉDICO E PACIENTE, AGRUPANDO OS ATENDIMENTOS.
+CREATE OR REPLACE VIEW vw_resumo_prontuarios AS
+SELECT 
+    u_pac.nome_completo AS nome_paciente,
+    u_med.nome_completo AS nome_medico,
+    COUNT(p.id_prontuario) AS total_prontuarios,
+    MAX(p.dt_atendimento) AS ultimo_atendimento
+FROM prontuarios p
+JOIN pacientes pac ON pac.id_paciente = p.id_paciente
+JOIN medicos med ON med.id_medico = p.id_medico
+JOIN usuarios u_pac ON u_pac.id_usuario = pac.id_usuario
+JOIN usuarios u_med ON u_med.id_usuario = med.id_usuario
+GROUP BY u_pac.nome_completo, u_med.nome_completo
+ORDER BY total_prontuarios DESC;
+
+# MOSTRAR A QUANTIDADE DE EXAMES POR PRONTUÁRIO, AGRUPADO PELO TIPO DE EXAME E ORDENADO PELA DATA MAIS RECENTE.
+CREATE OR REPLACE VIEW vw_exames_por_prontuario AS
+SELECT 
+    ep.id_prontuario,
+    e.tp_exame,
+    COUNT(e.id_exame) AS total_exames,
+    MAX(ep.data_resultado) AS ultima_data_resultado
+FROM exames_prontuarios ep
+JOIN exames e ON e.id_exame = ep.id_exame
+GROUP BY ep.id_prontuario, e.tp_exame
+ORDER BY ultima_data_resultado DESC;
+
+
+# MOSTRAR DIAGNÓSTICOS QUE MAIS GERARAM RECEITAS, AGRUPADOS E ORDENADOS PELA QUANTIDADE DE RECEITAS.
+CREATE OR REPLACE VIEW vw_receitas_com_diagnostico AS
+SELECT 
+    p.diagnostico,
+    COUNT(r.id_receita) AS total_receitas,
+    MIN(r.dt_receita) AS primeira_receita,
+    MAX(r.dt_receita) AS ultima_receita
+FROM receitas_medicas r
+JOIN prontuarios p ON p.id_prontuario = r.id_prontuario
+GROUP BY p.diagnostico
+ORDER BY total_receitas DESC;

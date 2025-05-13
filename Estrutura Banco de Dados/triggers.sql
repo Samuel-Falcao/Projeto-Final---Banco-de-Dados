@@ -59,3 +59,25 @@ BEGIN
 END;
 
 DELIMITER ;
+
+#TRIGGER QUE VERIFICA SE A DATA DO EXAME É POSTERIOR À DO PRONTUÁRIO.
+DELIMITER //
+
+CREATE TRIGGER trg_validar_data_exame
+BEFORE INSERT ON exames_prontuarios
+FOR EACH ROW
+BEGIN
+    DECLARE data_atendimento DATETIME;
+
+    SELECT dt_atendimento INTO data_atendimento
+    FROM prontuarios
+    WHERE id_prontuario = NEW.id_prontuario;
+
+    IF NEW.data_resultado < data_atendimento THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'A data do exame não pode ser anterior à data do atendimento';
+    END IF;
+END;
+//
+
+DELIMITER ;
