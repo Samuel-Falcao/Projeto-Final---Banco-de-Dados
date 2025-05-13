@@ -46,17 +46,18 @@ BEGIN
     SET NEW.data_alteracao = NOW();
 END//
 DELIMITER ;
-#TRIGGER QUE IMPEDE A INSERÇÃO DE AGENDAMENTOS NO PASSADO
-DELIMITER $$
-CREATE TRIGGER prevent_past_appointments
-BEFORE INSERT ON agendamentos
+#TRIGGER QUE ATUALIZA STATUS AUTOMATICAMENTE SE A DATA PASSOU
+DELIMITER //
+
+CREATE TRIGGER atualiza_status_apos_data
+BEFORE UPDATE ON agendamentos
 FOR EACH ROW
 BEGIN
-  IF NEW.dt_agendada < NOW() THEN
-    SIGNAL SQLSTATE '45000'
-    SET MESSAGE_TEXT = 'Não é possível agendar consultas no passado.';
-  END IF;
+    IF NEW.dt_agendada < NOW() AND NEW.sts = 'Agendado' THEN
+        SET NEW.sts = 'Não compareceu';
+    END IF;
 END;
+//
 
 DELIMITER ;
 
