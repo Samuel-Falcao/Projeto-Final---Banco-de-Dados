@@ -1054,7 +1054,7 @@ WHERE id_usuario IN (1, 19, 11, 21, 46, 57, 59, 66);
 UPDATE exames
 SET sts = 'ativo'
 WHERE id_exame IN (7,10,33);
-### VERIFICAR ARQUIVO ORIGINAL ###
+
 UPDATE exames AS e
 JOIN (
     SELECT id_exame
@@ -1078,25 +1078,28 @@ WHERE id_agendamento = 5;
 UPDATE prontuarios
 SET conduta = 'Paciente orientado a manter repouso e hidratação'
 WHERE id_prontuario = 5;
-###  VERIFICAR ### 
+
+DELETE FROM funcionarios 
+WHERE id_usuario = 85;
+
+DELETE FROM receitas_medicas
+ WHERE id_receita = 42;
+
+DELETE FROM exames_prontuarios
+ WHERE id_prontuario = 12;
+
+DELETE FROM enderecos WHERE 
+id_usuario = 91;
+
+DELETE FROM prontuarios WHERE 
+id_prontuario = 50;
+
 DELETE FROM enderecos
 WHERE id_endereco IN (79, 80);
 
-DELETE FROM pacientes 
-WHERE id_paciente IN (39, 40);
-
-DELETE FROM usuarios
-WHERE id_usuario IN (79, 80) AND tipo_usuario = 'Paciente';
-
-DELETE FROM convenios 
-WHERE id_convenio IN (39,40);
-
-DELETE FROM agendamentos
-WHERE id_agendamento = 32;
-
 DELETE FROM receitas_medicas
 WHERE id_receita = 40;
-##########################################################
+
 CREATE VIEW vw_usuarios_maiores_18 AS
 SELECT 
     u.id_usuario,

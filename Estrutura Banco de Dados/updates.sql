@@ -23,14 +23,14 @@ WHERE id_usuario IN (1, 19, 11, 21, 46, 57, 59, 66);
 UPDATE exames
 SET sts = 'ativo'
 WHERE id_exame IN (7,10,33);
-
-UPDATE exames
-SET sts = 'ativo'
-WHERE id_exame IN (
-  SELECT id_exame
-  FROM exames
-  WHERE valor > 200 AND tp_exame = 'imagem'
-);
+# ATUALIZA O STATUS PARA 'ATIVO' DOS EXAMES DO TIPO 'IMAGEM' CUJO VALOR SEJA SUPERIOR A 200
+UPDATE exames AS e
+JOIN (
+    SELECT id_exame
+    FROM exames
+    WHERE valor > 200 AND tp_exame = 'imagem'
+) AS filtro ON e.id_exame = filtro.id_exame
+SET e.sts = 'ativo';
 # ATUALIZA STATUS PARA 'CONCLUÍDO' DO AGENDAMENTO COM ID 1 
 UPDATE agendamentos
 SET sts = 'Concluído'
