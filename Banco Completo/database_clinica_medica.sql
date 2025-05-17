@@ -1187,21 +1187,23 @@ SELECT
 FROM agendamentos
 ORDER BY dt_agendada ASC;
 
-CREATE VIEW vw_exames_por_forma_pagamento AS 
+CREATE OR REPLACE VIEW vw_exames_por_forma_pagamento AS 
 SELECT 
     fp.nome AS forma_pagamento, 
-    COUNT(e.id_exame) AS total_exames_realizados, 
+    COUNT(a.id_exames) AS total_exames_realizados, 
     SUM(e.valor) AS valor_total_exames
 FROM 
-    exames e
+    agendamentos a
 JOIN 
-    formas_de_pagamento fp ON e.id_exame = fp.id_pagamento  
+    formas_de_pagamento fp ON a.id_pagamento = fp.id_pagamento
+JOIN 
+    exames e ON a.id_exames = e.id_exame
 WHERE 
     e.sts = 'ativo'  
 GROUP BY 
     fp.nome
 HAVING 
-    COUNT(e.id_exame) > 0  
+    COUNT(a.id_exames) > 0  
 ORDER BY 
     valor_total_exames DESC;
 
